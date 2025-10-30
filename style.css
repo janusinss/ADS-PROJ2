@@ -1,0 +1,82 @@
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Add a subtle background pattern */
+    background-color: #0a192f; /* Dark blue */
+}
+
+/* Glassmorphism Card Style */
+.card-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card-glass:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.1);
+}
+
+/* Form Input Styling */
+.form-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #06b6d4; /* Cyan-500 */
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
+}
+
+/* Primary Button */
+.btn-primary {
+    background: #06b6d4; /* Cyan-500 */
+    color: #0a192f;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #0891b2; /* Cyan-600 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+}
+
+.btn-primary:disabled {
+    background: #6b7280;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Link Button */
+.btn-link {
+    background: transparent;
+    border: 1px solid #06b6d4;
+    color: #06b6d4;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-link:hover {
+    background: rgba(6, 182, 212, 0.1);
+}
