@@ -1,0 +1,145 @@
+Activity: Building a Simple API and Front-End Application
+Title: Developing a PHP-Based API with Database Connection, Class Integration, and Front-End Implementation
+
+Overview
+In this activity, you will design, develop, and test a complete end-to-end web application that connects the frontend interface with a PHP API backend and a MySQL database.
+You will begin by studying and replicating the examples in the Database and API Workbook (attached in your learning materials). These examples will guide you through each layer of the application—from establishing a database connection to building API endpoints and integrating them with a simple web interface.
+This activity combines key web development and backend concepts that are essential for modern full-stack application design.
+
+Learning Objectives
+By the end of this activity, you should be able to:
+1.	Establish a working database connection in PHP using a separate configuration file.
+2.	Create a PHP class that interacts with a MySQL database using SQL queries.
+3.	Develop API endpoints to handle basic CRUD operations (Create, Read, Update, Delete).
+4.	Implement a frontend interface using HTML, CSS, and JavaScript (AJAX) to communicate with the API.
+5.	Understand the end-to-end process of how client-side requests are handled and processed in a full-stack web system.
+6.	Apply your learning by designing and developing your own Online Portfolio Application as the final output.
+________________________________________
+Activity Instructions
+Phase 1: Study and Setup
+1.	Read the Database and API Workbook provided with this lesson.
+o	Study the example implementations for:
+	Database Connection (database.php)
+	Class File (Subject.php)
+	API Endpoint (subject_api.php)
+	Front-End Interface (index.html or subject.html)
+2.	Install and configure a local development environment using XAMPP, WAMP, or LAMP.
+3.	Launch phpMyAdmin and create the database and tables as shown in the workbook.
+4.	Test your setup by running the sample API endpoints and verifying the output in JSON format.
+
+Phase 2: Implementation Task
+After studying the workbook examples, create your own working mini-project following the same structure.
+1.	Create the Database Connection
+o	File: database.php
+o	Purpose: Establish a connection to MySQL using PDO or MySQLi.
+o	Test by connecting to your database and printing a success message.
+2.	Create the PHP Class
+o	File: Subject.php
+o	Include CRUD functions:
+	addSubject()
+	updateSubject()
+	deleteSubject()
+	getSubjects()
+o	Use SQL statements and prepared statements to interact securely with the database.
+3.	Create the API Endpoint
+o	File: subject_api.php
+o	Purpose: Handle HTTP requests and return JSON responses.
+o	Implement the following actions:
+	action=add → Calls addSubject()
+	action=update → Calls updateSubject()
+	action=delete → Calls deleteSubject()
+	action=read → Calls getSubjects()
+o	Test using the browser or Postman to check for proper JSON outputs.
+4.	Build the Front-End Interface
+o	File: index.html or subject.html
+o	Use HTML, CSS, and JavaScript (or Tailwind CSS for styling).
+o	Use AJAX or Fetch API to call your PHP API endpoints dynamically.
+o	Implement simple buttons or forms to:
+	Add a new subject
+	Edit an existing subject
+	Delete a subject
+	Display all subjects in a table
+
+Phase 3: Final Individual Output – Online Portfolio Application
+After completing and understanding the Database and API Workbook exercises, you will now apply the concepts learned by developing your own Online Portfolio Application.
+This serves as your final individual output, demonstrating your ability to integrate the frontend, backend (API), and database into a single, functional, and well-structured web application. The goal is to simulate a real-world scenario where you build a personalized system capable of managing and displaying your professional and personal information through a fully dynamic interface.
+
+System Description
+Your Online Portfolio Application will act as your digital profile — a platform where you can showcase your personal information, academic background, skills, projects, and other relevant details. The system should allow you to add, update, view, and delete your portfolio entries through API-based CRUD operations.
+The application architecture must follow the same modular design you practiced in the workbook:
+•	Database Layer – handles data storage and relationships.
+•	PHP Class Layer – contains the business logic and SQL operations.
+•	API Layer – processes client requests and returns responses in JSON format.
+•	Frontend Layer – provides the user interface and communicates with the API through AJAX.
+________________________________________
+System Requirements
+Your portfolio must include the following core components:
+1. Database Design
+Create a MySQL database that includes multiple tables representing different sections of your portfolio.
+At a minimum, include the following:
+Table	Description,
+profile	ze
+skills	Lists your technical and soft skills, including proficiency levels.
+hobbies	Contains your interests or activities outside academics.
+projects	Displays your academic or personal projects, including title, description, and links.
+contacts	Records inquiries or messages from users (if implemented).
+You are encouraged to add more tables such as education, certifications, achievements, or experience to make your portfolio more comprehensive.
+Use primary keys, foreign keys, and indexes appropriately to ensure efficient and relational data organization.
+
+2. PHP API
+Develop a set of API endpoints that handle CRUD operations for each portfolio component.
+Each endpoint should:
+•	Use prepared statements for security.
+•	Return responses in JSON format.
+•	Handle requests such as:
+o	addRecord() → Add a new record to a specific table.
+o	updateRecord() → Modify existing information.
+o	deleteRecord() → Remove entries from the database.
+o	getRecords() → Retrieve and display all relevant data.
+All API logic should be placed in separate files according to function, for example:
+•	profile_api.php
+•	skills_api.php
+•	projects_api.php
+Each API file should include:
+•	The database connection (database.php)
+•	The class file that performs SQL operations
+•	Conditional statements for the different action parameters (add, update, delete, read)
+
+3. PHP Class Structure
+Each section (e.g., Profile, Skills, Projects) must have a corresponding class file containing all SQL logic.
+Example:
+•	Profile.php
+•	Skill.php
+•	Project.php
+Each class must include:
+•	SQL statements for Insert, Update, Delete, and Select operations.
+•	Use of OOP principles for better code reusability and readability.
+•	Error handling and return messages for success or failure operations.
+
+4. Front-End Implementation (Make your own Design)
+Design a user-friendly web interface using HTML, CSS (or Tailwind CSS), and JavaScript.
+•	Display your personal information, skills, hobbies, and projects dynamically using data retrieved from the API.
+•	Implement forms or modals that allow adding or editing data directly from the interface.
+•	Use AJAX or Fetch API to send requests and update content without reloading the page.
+•	Maintain a clean, responsive, and professional layout that reflects your personal branding.
+
+5. SQL Query Usage
+To reinforce your understanding of SQL, the following must be demonstrated in your project:
+•	Use of basic SQL queries (SELECT, INSERT, UPDATE, DELETE)
+•	Use of advanced SQL features, such as:
+o	JOINS (to connect data across related tables)
+o	INDEXES (for performance optimization)
+o	SUBQUERIES and CTEs (Common Table Expressions)
+o	AGGREGATE functions (e.g., COUNT, AVG, MAX)
+o	ORDER BY, GROUP BY, and HAVING clauses
+Document and comment on where these queries are used in your project for easier evaluation.
+
+Expected Outcome
+By the end of this phase, you will have created a fully functional Online Portfolio System that demonstrates your:
+•	Mastery of database and API integration
+•	Understanding of SQL query optimization
+•	Ability to design modular PHP applications
+•	Skill in developing dynamic, data-driven web interfaces
+This portfolio will not only serve as your final output but also as a professional showcase of your technical capabilities, ready for future academic or career presentations.
+
+This exercise will strengthen your understanding of full-stack web development, RESTful API design, and modular PHP architecture—core skills needed in both academic research and professional software engineering.

@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janus Dominic - Full-Stack Developer</title>
+    <title>Janus Dominic - Full-Stack Developer Portfolio</title>
+    <meta name="description" content="Professional portfolio showcasing full-stack development skills, projects, and achievements">
+    
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <!-- Load Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    
     <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
 
     <!-- Header & Navigation -->
-    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white">Janus Dominic</a>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">Janus Dominic</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                    <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                    <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                    <a href="#education" class="hover:text-cyan-400 transition-colors">Education</a>
+                    <a href="#achievements" class="hover:text-cyan-400 transition-colors">Achievements</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
-            <!-- Mobile Menu Button (optional) -->
         </nav>
     </header>
 
@@ -33,7 +45,6 @@
         <section id="about" class="min-h-[70vh] flex items-center">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" id="profile-content">
                 <!-- Profile data will be injected here by JS -->
-                <!-- Fallback content -->
                 <div class="animate-pulse">
                     <h1 class="text-5xl font-bold mb-4">Loading...</h1>
                     <h2 class="text-3xl font-light text-cyan-400 mb-6">Loading Title...</h2>
@@ -48,12 +59,19 @@
             </div>
         </section>
 
+        <!-- Portfolio Statistics (Optional - Advanced SQL Demo) -->
+        <section id="stats" class="py-12">
+            <div id="portfolio-stats"></div>
+        </section>
+
         <!-- Skills Section -->
         <section id="skills" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">My Skills</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">My Skills</h2>
+                <p class="text-gray-400">Technical expertise and proficiency levels</p>
+            </div>
             <div id="skills-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Skills data will be injected here by JS -->
-                <!-- Fallback content -->
                 <div class="card-glass text-center p-6 animate-pulse">
                     <div class="w-16 h-16 bg-gray-700 rounded-full mx-auto mb-4"></div>
                     <div class="h-6 w-3/4 bg-gray-700 rounded mx-auto mb-2"></div>
@@ -62,12 +80,30 @@
             </div>
         </section>
 
+        <!-- Work Experience Section -->
+        <section id="experience" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">Work Experience</h2>
+                <p class="text-gray-400">Professional journey and career milestones</p>
+            </div>
+            <div id="experience-list" class="space-y-6 max-w-4xl mx-auto">
+                <!-- Experience data will be injected here by JS -->
+                <div class="card-glass p-6 animate-pulse">
+                    <div class="h-6 w-2/3 bg-gray-700 rounded mb-4"></div>
+                    <div class="h-4 w-1/2 bg-gray-700 rounded mb-2"></div>
+                    <div class="h-4 w-full bg-gray-700 rounded"></div>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects Section -->
         <section id="projects" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">My Projects</h2>
+                <p class="text-gray-400">Featured work and personal endeavors</p>
+            </div>
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projects data will be injected here by JS -->
-                <!-- Fallback content -->
                 <div class="card-glass overflow-hidden animate-pulse">
                     <div class="w-full h-48 bg-gray-700"></div>
                     <div class="p-6">
@@ -82,9 +118,64 @@
             </div>
         </section>
 
+        <!-- Education Section -->
+        <section id="education" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">Education</h2>
+                <p class="text-gray-400">Academic background and qualifications</p>
+            </div>
+            <div id="education-list" class="space-y-6 max-w-4xl mx-auto">
+                <!-- Education data will be injected here by JS -->
+                <div class="card-glass p-6 animate-pulse">
+                    <div class="h-6 w-2/3 bg-gray-700 rounded mb-4"></div>
+                    <div class="h-4 w-1/2 bg-gray-700 rounded mb-2"></div>
+                    <div class="h-4 w-full bg-gray-700 rounded"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">Certifications</h2>
+                <p class="text-gray-400">Professional credentials and training</p>
+            </div>
+            <div id="certifications-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Certifications data will be injected here by JS -->
+                <div class="card-glass p-6 animate-pulse">
+                    <div class="h-6 w-2/3 bg-gray-700 rounded mb-3"></div>
+                    <div class="h-4 w-1/2 bg-gray-700 rounded mb-2"></div>
+                    <div class="h-4 w-full bg-gray-700 rounded"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">Achievements</h2>
+                <p class="text-gray-400">Awards, recognitions, and accomplishments</p>
+            </div>
+            <div id="achievements-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <!-- Achievements data will be injected here by JS -->
+                <div class="card-glass p-6 animate-pulse">
+                    <div class="flex gap-4">
+                        <div class="w-12 h-12 bg-gray-700 rounded-full"></div>
+                        <div class="flex-1">
+                            <div class="h-6 w-3/4 bg-gray-700 rounded mb-2"></div>
+                            <div class="h-4 w-1/2 bg-gray-700 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Hobbies Section -->
         <section id="hobbies" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">Hobbies</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">Hobbies & Interests</h2>
+                <p class="text-gray-400">What I enjoy outside of work</p>
+            </div>
             <div id="hobbies-list" class="flex flex-wrap justify-center gap-4">
                 <!-- Hobbies data will be injected here by JS -->
                 <div class="card-glass p-4 animate-pulse h-12 w-48 bg-gray-700 rounded-lg"></div>
@@ -93,27 +184,52 @@
 
         <!-- Contact Section -->
         <section id="contact" class="py-20">
-            <h2 class="text-4xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-3">Get In Touch</h2>
+                <p class="text-gray-400">Let's discuss your project or opportunity</p>
+            </div>
             <div class="max-w-2xl mx-auto card-glass p-8">
                 <form id="contact-form">
                     <div id="form-message" class="mb-4 hidden p-4 rounded-lg"></div>
+                    
                     <div class="mb-4">
-                        <label for="visitor_name" class="block text-sm font-medium mb-2">Name</label>
-                        <input type="text" id="visitor_name" name="visitor_name" class="form-input" required>
+                        <label for="visitor_name" class="block text-sm font-medium mb-2">
+                            Name <span class="text-red-400">*</span>
+                        </label>
+                        <input type="text" id="visitor_name" name="visitor_name" 
+                               class="form-input" required 
+                               placeholder="Your full name">
                     </div>
+                    
                     <div class="mb-4">
-                        <label for="visitor_email" class="block text-sm font-medium mb-2">Email</label>
-                        <input type="email" id="visitor_email" name="visitor_email" class="form-input" required>
+                        <label for="visitor_email" class="block text-sm font-medium mb-2">
+                            Email <span class="text-red-400">*</span>
+                        </label>
+                        <input type="email" id="visitor_email" name="visitor_email" 
+                               class="form-input" required 
+                               placeholder="your.email@example.com">
                     </div>
+                    
                     <div class="mb-4">
-                        <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input">
+                        <label for="subject" class="block text-sm font-medium mb-2">
+                            Subject
+                        </label>
+                        <input type="text" id="subject" name="subject" 
+                               class="form-input" 
+                               placeholder="What is this regarding?">
                     </div>
+                    
                     <div class="mb-4">
-                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" class="form-input" required></textarea>
+                        <label for="message" class="block text-sm font-medium mb-2">
+                            Message <span class="text-red-400">*</span>
+                        </label>
+                        <textarea id="message" name="message" rows="5" 
+                                  class="form-input" required 
+                                  placeholder="Your message here..."></textarea>
                     </div>
+                    
                     <button type="submit" class="btn-primary w-full" id="contact-submit-btn">
+                        <i data-lucide="send" class="w-4 h-4 inline mr-2"></i>
                         Send Message
                     </button>
                 </form>
@@ -123,8 +239,15 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-950 text-center p-8">
-        <p>&copy; <span id="footer-year"></span> Janus Dominic. All rights reserved.</p>
+    <footer class="bg-gray-950 text-center p-8 border-t border-gray-800">
+        <div class="container mx-auto">
+            <p class="text-gray-400">
+                &copy; <span id="footer-year"></span> Janus Dominic. All rights reserved.
+            </p>
+            <p class="text-gray-500 text-sm mt-2">
+                Built with PHP, MySQL, and modern web technologies
+            </p>
+        </div>
     </footer>
 
     <!-- Load JavaScript -->
