@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set footer year
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+    
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 });
 
 /**
@@ -22,7 +27,7 @@ async function loadProfile() {
         renderProfile(profile);
     } catch (error) {
         console.error('Error loading profile:', error);
-        document.getElementById('profile-content').innerHTML = '<p class="text-red-400">Error loading profile data.</p>';
+        document.getElementById('profile-content').innerHTML = '<p class="text-red-400">Error loading profile data. Make sure you are running this through a PHP server (XAMPP/WAMP).</p>';
     }
 }
 
@@ -62,7 +67,9 @@ function renderProfile(profile) {
                  class="w-64 h-64 md:w-96 md:h-96 rounded-full object-cover border-4 border-cyan-500 shadow-lg shadow-cyan-500/20">
         </div>
     `;
-    lucide.createIcons(); // Re-initialize icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 }
 
 /**
@@ -77,7 +84,7 @@ async function loadSkills() {
         renderSkills(skills);
     } catch (error) {
         console.error('Error loading skills:', error);
-        document.getElementById('skills-grid').innerHTML = '<p class="text-red-400">Error loading skills data.</p>';
+        document.getElementById('skills-grid').innerHTML = '<p class="text-red-400">Error loading skills data. Make sure you are running this through a PHP server (XAMPP/WAMP).</p>';
     }
 }
 
@@ -114,10 +121,9 @@ async function loadProjects() {
 
         const projects = await response.json();
         renderProjects(projects);
-    } catch (error)
-        {
+    } catch (error) {
         console.error('Error loading projects:', error);
-        document.getElementById('projects-grid').innerHTML = '<p class="text-red-400">Error loading projects data.</p>';
+        document.getElementById('projects-grid').innerHTML = '<p class="text-red-400">Error loading projects data. Make sure you are running this through a PHP server (XAMPP/WAMP).</p>';
     }
 }
 
@@ -151,7 +157,9 @@ function renderProjects(projects) {
             </div>
         </div>
     `).join('');
-    lucide.createIcons(); // Re-initialize icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 }
 
 /**
@@ -166,7 +174,7 @@ async function loadHobbies() {
         renderHobbies(hobbies);
     } catch (error) {
         console.error('Error loading hobbies:', error);
-        document.getElementById('hobbies-list').innerHTML = '<p class="text-red-400">Error loading hobbies data.</p>';
+        document.getElementById('hobbies-list').innerHTML = '<p class="text-red-400">Error loading hobbies data. Make sure you are running this through a PHP server (XAMPP/WAMP).</p>';
     }
 }
 

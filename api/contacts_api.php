@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-include_once '../class/database.php';
-include_once '../class/Contact.php';
+include_once '../database.php';
+include_once '../Contact.php';
 
 $database = new Database();
 $db = $database->connect();
@@ -40,10 +40,7 @@ if ($method === 'POST') {
         echo json_encode(array('message' => 'Message Not Sent. Please fill in all required fields.'));
     }
 } else {
-    // You could add a GET method here to read messages,
-    // but that should be secured behind an admin login.
     http_response_code(405);
     echo json_encode(array('message' => 'Method Not Allowed (POST only)'));
 }
 ?>
-

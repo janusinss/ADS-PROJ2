@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-include_once '../class/database.php';
-include_once '../class/Profile.php';
+include_once '../database.php';
+include_once '../Profile.php';
 
 // Instantiate DB & connect
 $database = new Database();
@@ -40,13 +40,10 @@ if ($method === 'GET') {
     }
 } elseif ($method === 'POST') {
     // Update Profile
-    // Get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    // Check for action, default to update
     if (isset($data->action) && $data->action === 'update') {
-        // Set properties
-        $profile->id = 1; // Assuming profile ID is 1
+        $profile->id = 1;
         $profile->full_name = $data->full_name;
         $profile->professional_title = $data->professional_title;
         $profile->bio = $data->bio;
@@ -64,11 +61,10 @@ if ($method === 'GET') {
         }
     } else {
         http_response_code(400);
-        echo json_encode(array('message' => 'Invalid action. Only "update" is supported via POST.'));
+        echo json_encode(array('message' => 'Invalid action.'));
     }
 } else {
     http_response_code(405);
     echo json_encode(array('message' => 'Method Not Allowed'));
 }
 ?>
-

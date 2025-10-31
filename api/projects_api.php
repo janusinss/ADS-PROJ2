@@ -3,8 +3,8 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-include_once '../class/database.php';
-include_once '../class/Project.php';
+include_once '../database.php';
+include_once '../Project.php';
 
 $database = new Database();
 $db = $database->connect();
@@ -25,24 +25,21 @@ if ($method === 'GET') {
                 'id' => $id,
                 'title' => $title,
                 'description' => $description,
-                'project_url' => $project_url,
-                'repo_url' => $repo_url,
-                'project_date' => $project_date,
-                'image_url' => $image_url
+                'project_url' => $project_url ?? '#',
+                'repo_url' => $repo_url ?? '#',
+                'project_date' => $project_date ?? '',
+                'image_url' => $image_url ?? 'https://placehold.co/600x400/555/FFF?text=Project'
             );
             array_push($projects_arr, $project_item);
         }
         http_response_code(200);
         echo json_encode($projects_arr);
     } else {
-        http_response_code(404);
-        echo json_encode(array('message' => 'No projects found.'));
+        http_response_code(200);
+        echo json_encode(array());
     }
 } else {
-    // Add other methods (POST for add, update, delete)
-    // following the pattern from skills_api.php
     http_response_code(405);
-    echo json_encode(array('message' => 'Method Not Allowed (GET only for this example)'));
+    echo json_encode(array('message' => 'Method Not Allowed (GET only)'));
 }
 ?>
-

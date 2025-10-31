@@ -3,8 +3,8 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
-include_once '../class/database.php';
-include_once '../class/Hobby.php';
+include_once '../database.php';
+include_once '../Hobby.php';
 
 $database = new Database();
 $db = $database->connect();
@@ -24,21 +24,18 @@ if ($method === 'GET') {
             $hobby_item = array(
                 'id' => $id,
                 'name' => $name,
-                'description' => $description
+                'description' => $description ?? ''
             );
             array_push($hobbies_arr, $hobby_item);
         }
         http_response_code(200);
         echo json_encode($hobbies_arr);
     } else {
-        http_response_code(404);
-        echo json_encode(array('message' => 'No hobbies found.'));
+        http_response_code(200);
+        echo json_encode(array());
     }
 } else {
-    // Add other methods (POST for add, update, delete)
-    // following the pattern from skills_api.php
     http_response_code(405);
-    echo json_encode(array('message' => 'Method Not Allowed (GET only for this example)'));
+    echo json_encode(array('message' => 'Method Not Allowed (GET only)'));
 }
 ?>
-

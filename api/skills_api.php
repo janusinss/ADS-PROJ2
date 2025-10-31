@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-include_once '../class/database.php';
-include_once '../class/Skill.php';
+include_once '../database.php';
+include_once '../Skill.php';
 
 $database = new Database();
 $db = $database->connect();
@@ -27,19 +27,18 @@ if ($method === 'GET') {
                 'id' => $id,
                 'name' => $name,
                 'proficiency' => $proficiency,
-                'category_id' => $category_id,
-                'category_name' => $category_name
+                'category_id' => $category_id ?? null,
+                'category_name' => $category_name ?? 'Uncategorized'
             );
             array_push($skills_arr, $skill_item);
         }
         http_response_code(200);
         echo json_encode($skills_arr);
     } else {
-        http_response_code(404);
-        echo json_encode(array('message' => 'No skills found.'));
+        http_response_code(200);
+        echo json_encode(array());
     }
 } elseif ($method === 'POST') {
-    // Get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
     if (!isset($data->action)) {
@@ -55,7 +54,7 @@ if ($method === 'GET') {
             $skill->category_id = $data->category_id;
 
             if ($skill->add()) {
-                http_response_code(201); // Created
+                http_response_code(201);
                 echo json_encode(array('message' => 'Skill Added', 'id' => $skill->id));
             } else {
                 http_response_code(500);
@@ -100,4 +99,3 @@ if ($method === 'GET') {
     echo json_encode(array('message' => 'Method Not Allowed'));
 }
 ?>
-
