@@ -31,7 +31,7 @@ VALUES (
     'Passionate developer with expertise in building modern web applications. Specializing in PHP, MySQL, JavaScript, and creating seamless user experiences.',
     'janus.dominic@example.com',
     '+63 912 345 6789',
-    'https://facebook.com/janusinss',
+    'https://www.facebook.com/notagirlgamer69',
     'https://i.pravatar.cc/400?img=33'
 );
 

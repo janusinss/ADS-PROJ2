@@ -533,9 +533,9 @@
                 
                 document.getElementById('contact-info').innerHTML = `
                     <p class="text-secondary">Email</p>
-                    <p class="mb-4">${profile.email}</p>
+                    <p class="mb-4">janusdominic0@gmail.com</p>
                     <p class="text-secondary">Phone</p>
-                    <p class="mb-4">${profile.phone}</p>
+                    <p class="mb-4">0994-873-9200</p>
                     <p class="text-secondary">Social</p>
                     <a href="${profile.facebook_url}" target="_blank" class="link-arrow">Facebook →</a>
                 `;
@@ -610,7 +610,7 @@
                 document.getElementById('education-list').innerHTML = education.map(edu => `
                     <div class="info-card p-5 rounded fade-in">
                         <h4 class="font-light">${edu.degree}</h4>
-                        <p class="text-sm text-secondary">${edu.institution}</p>
+                        <p class="text-sm text-secondary">Western Mindanao State University</p>
                         ${edu.field_of_study ? `<p class="text-xs text-secondary mt-1">${edu.field_of_study}</p>` : ''}
                     </div>
                 `).join('');
