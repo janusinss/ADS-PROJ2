@@ -1,82 +1,87 @@
-/* Import a modern font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=JetBrains+Mono:wght@300;400&display=swap');
 
+:root {
+    /* === LIGHT MODE (Warm Beige) === */
+    /* Background: The lightest beige */
+    --bg-color: #f9f8f6; 
+    
+    /* Text: Using the Deep Navy from your dark palette for sharp contrast */
+    --text-main: #19183b; 
+    --text-muted: #708993; 
+    
+    /* Cards: The secondary beige */
+    --card-bg: rgba(239, 233, 227, 0.6); /* #efe9e3 with opacity */
+    --card-hover: rgba(239, 233, 227, 0.9);
+    
+    /* Borders: The darker beige */
+    --border-color: #d9cfc7;
+    --accent: #c9b59c; /* The gold/tan color */
+}
+
+[data-theme="dark"] {
+    /* === DARK MODE (Deep Navy) === */
+    /* Background: Deep Navy */
+    --bg-color: #19183b;
+    
+    /* Text: The lightest mint from your palette */
+    --text-main: #e7f2ef;
+    --text-muted: #a1c2bd;
+    
+    /* Cards: Navy with a touch of Slate */
+    --card-bg: rgba(25, 24, 59, 0.7); 
+    --card-hover: rgba(112, 137, 147, 0.3); /* #708993 low opacity */
+    
+    /* Borders: Slate Blue */
+    --border-color: rgba(112, 137, 147, 0.3);
+    --accent: #a1c2bd; /* Teal */
+}
+
+/* Update body to use these new variables */
 body {
-    font-family: 'Inter', sans-serif;
-    /* Add a subtle background pattern */
-    background-color: #0a192f; /* Dark blue */
+    background-color: var(--bg-color);
+    color: var(--text-main);
 }
 
-/* Glassmorphism Card Style */
-.card-glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+/* TYPOGRAPHY AS UI */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* DESTROYING THE CARDS */
+.card-glass, .project-card, .info-card {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    border-left: 1px solid rgba(128, 128, 128, 0.2) !important; /* Minimalist alignment line */
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding-left: 2rem !important;
+    margin-bottom: 4rem;
     transition: all 0.3s ease;
 }
 
+/* THE HOVER EFFECT: Text Glitch/Shift */
 .card-glass:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.1);
+    transform: translateX(10px); /* Slide right instead of pop up */
+    border-left-color: var(--accent) !important;
 }
 
-/* Form Input Styling */
-.form-input {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 12px;
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #06b6d4; /* Cyan-500 */
-    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
-}
-
-/* Primary Button */
-.btn-primary {
-    background: #06b6d4; /* Cyan-500 */
-    color: #0a192f;
-    font-weight: bold;
-    padding: 12px 24px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background: #0891b2; /* Cyan-600 */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
-}
-
-.btn-primary:disabled {
-    background: #6b7280;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-/* Link Button */
-.btn-link {
+/* BUTTONS -> JUST TEXT */
+.btn-primary, .btn-link {
     background: transparent;
-    border: 1px solid #06b6d4;
-    color: #06b6d4;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    border-radius: 0; /* Square edges */
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
 }
 
-.btn-link:hover {
-    background: rgba(6, 182, 212, 0.1);
+.btn-primary:hover, .btn-link:hover {
+    background: var(--text-main);
+    color: var(--bg-color);
+    box-shadow: none;
 }
